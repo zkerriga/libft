@@ -18,6 +18,13 @@
 
 # define FT_MAX_LONG 9223372036854775807
 
+typedef struct		s_tree
+{
+	void 			*content;
+	struct s_tree	*left;
+	struct s_tree	*right;
+}					t_tree;
+
 typedef struct		s_list
 {
 	void			*content;
