@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_treedel.c                                       :+:      :+:    :+:   */
+/*   ft_treeclear.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zkerriga <zkerriga@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,14 @@
 
 #include "libft.h"
 
-void ft_treedel()
+void	ft_treeclear(t_list **tree, void (*del)(void*))
 {
-
+	if (*tree)
+	{
+		ft_treeclear(&(*tree)->right, del);
+		ft_treeclear(&(*tree)->left, del);
+		del((*tree)->content);
+		free(*tree);
+		*tree = NULL;
+	}
 }

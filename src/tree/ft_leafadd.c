@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void ft_leafadd(t_tree **tree, t_tree *new, int (*f_cmp)(void *, void *))
+void	ft_leafadd(t_tree **tree, t_tree *new, int (*f_cmp)(void *, void *))
 {
 	if (*tree)
 	{
