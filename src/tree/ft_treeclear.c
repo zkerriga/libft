@@ -6,13 +6,13 @@
 /*   By: zkerriga <zkerriga@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 11:52:29 by zkerriga          #+#    #+#             */
-/*   Updated: 2020/05/10 11:52:46 by zkerriga         ###   ########.fr       */
+/*   Updated: 2020/05/12 10:11:18 by zkerriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_treeclear(t_list **tree, void (*del)(void*))
+void	ft_treeclear(t_tree **tree, void (*del)(void*))
 {
 	if (*tree)
 	{
