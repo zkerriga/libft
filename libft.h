@@ -6,7 +6,7 @@
 /*   By: zkerriga <zkerriga@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/30 12:01:01 by zkerriga          #+#    #+#             */
-/*   Updated: 2020/05/08 13:15:56 by zkerriga         ###   ########.fr       */
+/*   Updated: 2020/05/12 10:11:42 by zkerriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 typedef struct		s_tree
 {
-	void 			*content;
+	void			*content;
 	struct s_tree	*left;
 	struct s_tree	*right;
 }					t_tree;
@@ -83,5 +83,15 @@ void				ft_lstclear(t_list **lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 								void (*del)(void *));
+
+void				ft_leafadd(t_tree **tree, t_tree *new,
+								int (*f_cmp)(void *, void *));
+t_tree				*ft_leaffind(t_tree *tree, void *content,
+									int (*f_cmp)(void *, void *));
+t_tree				*ft_leafnew(void *content);
+void				ft_treeclear(t_tree **tree, void (*del)(void*));
+void				ft_treeinorder(t_tree *tree, void (*func)(void*));
+void				ft_treepostorder(t_tree *tree, void (*func)(void*));
+void				ft_treepreorder(t_tree *tree, void (*func)(void*));
 
 #endif

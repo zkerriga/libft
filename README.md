@@ -7,6 +7,7 @@ In it, I tried to repeat the work of <i>standard functions</i> and wrote my <i>o
 3. Memory
 4. Numbers
 5. Related lists
+6. Binary trees
 
 <h3>How does it work?</h3>
 
