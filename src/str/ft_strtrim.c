@@ -6,7 +6,7 @@
 /*   By: zkerriga <zkerriga@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 15:40:49 by zkerriga          #+#    #+#             */
-/*   Updated: 2020/05/07 16:30:17 by zkerriga         ###   ########.fr       */
+/*   Updated: 2020/05/14 15:25:39 by zkerriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 	len = ft_strlen(s1);
 	while (len != 0 && ft_strchr(set, s1[len - 1]))
 		len--;
-	if (len == 0)
-		return (ft_substr(s1, 0, 0));
 	return (ft_substr(s1, 0, len));
 }
