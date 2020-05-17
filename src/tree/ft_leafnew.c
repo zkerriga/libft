@@ -6,7 +6,7 @@
 /*   By: zkerriga <zkerriga@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/10 09:05:20 by zkerriga          #+#    #+#             */
-/*   Updated: 2020/05/10 10:12:14 by zkerriga         ###   ########.fr       */
+/*   Updated: 2020/05/17 23:16:26 by zkerriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,11 @@ t_tree	*ft_leafnew(void *content)
 	t_tree	*new;
 
 	new = (t_tree *)malloc(sizeof(t_tree));
-	new->content = content;
-	new->left = NULL;
-	new->right = NULL;
+	if (new)
+	{
+		new->content = content;
+		new->left = NULL;
+		new->right = NULL;
+	}
 	return (new);
 }
