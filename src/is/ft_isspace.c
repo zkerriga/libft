@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zkerriga <zkerriga@student.21-school.ru>   +#+  +:+       +#+        */
+/*   By: zkerriga <zkerriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/30 10:53:02 by zkerriga          #+#    #+#             */
-/*   Updated: 2020/05/06 15:46:44 by zkerriga         ###   ########.fr       */
+/*   Created: 2020/06/15 11:26:10 by zkerriga          #+#    #+#             */
+/*   Updated: 2020/06/15 11:26:16 by zkerriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_bool	ft_isalpha(int c)
+t_bool	ft_isspace(int c)
 {
-	return ((c >= 'A' && c <= 'Z') ||
-			(c >= 'a' && c <= 'z'));
+	return (
+		c == '\t' ||
+		c == '\n' ||
+		c == '\v' ||
+		c == '\f' ||
+		c == '\r' ||
+		c == ' ');
 }
