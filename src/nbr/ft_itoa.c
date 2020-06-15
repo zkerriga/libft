@@ -18,11 +18,11 @@ static size_t	ft_nbr_len(int nbr)
 
 	len = 1;
 	if (nbr < 0)
-		len++;
+		++len;
 	while (nbr / 10 != 0)
 	{
 		nbr /= 10;
-		len++;
+		++len;
 	}
 	return (len);
 }
@@ -31,11 +31,10 @@ char			*ft_itoa(int n)
 {
 	char	*str;
 	size_t	len;
-	int		tmp;
+	char	tmp;
 
 	len = ft_nbr_len(n);
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (str)
+	if ((str = (char *)malloc(sizeof(char) * (len + 1))))
 	{
 		str[len--] = '\0';
 		while (n / 10 != 0)
