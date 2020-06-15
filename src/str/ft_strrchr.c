@@ -21,6 +21,9 @@ char	*ft_strrchr(const char *s, int c)
 	{
 		if (*s == c)
 			found = s;
+		++s;
 	}
+	if (*s == '\0' && *s == c)
+		return ((char *)s);
 	return ((char *)found);
 }
