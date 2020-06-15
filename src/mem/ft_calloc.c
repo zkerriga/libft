@@ -16,15 +16,11 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*mem;
 	size_t	len;
-	char	*tmp;
 
 	len = nmemb * size;
-	mem = malloc(len);
-	if (mem)
+	if ((mem = malloc(len)))
 	{
-		tmp = mem;
-		while (len-- != 0)
-			*tmp++ = 0;
+		ft_bzero(mem, len);
 	}
 	return (mem);
 }
