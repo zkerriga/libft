@@ -44,12 +44,11 @@ FILES = $(IS_FILES) $(MEM_FILES) $(NBR_FILES) $(PUT_FILES) $(STR_FILES) $(LST_FI
 FILES.O = $(addprefix $(OBJ_DIR), $(FILES:=.o))
 
 .PHONY: all
-all: $(NAME)
+all: $(OBJ_DIR) $(NAME)
 	@echo -e "\n\033[32m[+] Make completed!\033[0m"
 
-$(NAME): $(OBJ_DIR) $(FILES.O)
-	ar rc $(NAME) $(FILES.O)
-	ranlib $(NAME)
+$(NAME): $(FILES.O)
+	ar rcs $(NAME) $?
 
 $(OBJ_DIR):
 	mkdir $(OBJ_DIR)
