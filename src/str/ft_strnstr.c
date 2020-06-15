@@ -14,8 +14,8 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int		i;
-	size_t	length;
+	register int	i;
+	size_t			length;
 
 	if (ft_strlen(little) == 0)
 		return ((char *)big);
@@ -27,13 +27,13 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		{
 			if (little[i] != big[i])
 				break ;
-			i++;
-			length--;
+			++i;
+			--length;
 		}
 		if (little[i] == '\0')
 			return ((char *)big);
-		len--;
-		big++;
+		--len;
+		++big;
 	}
 	return (NULL);
 }

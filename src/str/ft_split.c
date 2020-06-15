@@ -18,7 +18,7 @@ static size_t	ft_strlen_c(const char *s, char c)
 
 	counter = 0;
 	while (*s && *s++ != c)
-		counter++;
+		++counter;
 	return (counter);
 }
 
@@ -29,15 +29,15 @@ static int		ft_count_words(const char **s, char c)
 
 	counter = 0;
 	while (**s && **s == c)
-		(*s)++;
+		++(*s);
 	tmp = *(char **)s;
 	while (*tmp)
 	{
 		while (*tmp && *tmp != c)
-			tmp++;
-		counter++;
+			++tmp;
+		++counter;
 		while (*tmp && *tmp == c)
-			tmp++;
+			++tmp;
 	}
 	return (counter);
 }
@@ -54,7 +54,7 @@ static void		ft_next_pointer(char const **s, char c)
 {
 	*s = ft_strchr(*s, c);
 	while (*s && **s && **s == c)
-		(*s)++;
+		++(*s);
 }
 
 char			**ft_split(char const *s, char c)
@@ -77,7 +77,7 @@ char			**ft_split(char const *s, char c)
 			else
 				return (ft_array_clear(array, i));
 			ft_next_pointer(&s, c);
-			i++;
+			++i;
 		}
 		array[i] = NULL;
 	}
