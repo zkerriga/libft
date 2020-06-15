@@ -67,3 +67,8 @@ fclean: clean
 
 .PHONY: re
 re: fclean all
+
+.PHONY: so
+so: fclean
+	gcc -fPIC -c *.c
+	gcc -shared -Wl,-soname,libft.so -o libft.so *.o
