@@ -14,9 +14,8 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	register unsigned char	*mem;
+	register unsigned char			*mem;
 	register const unsigned char	*src_copy;
-
 
 	if (n == 0 || (!dest && !src))
 		return (dest);

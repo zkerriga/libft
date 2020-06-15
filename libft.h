@@ -18,7 +18,7 @@
 
 # define FT_MAX_LONG 9223372036854775807
 
-typedef char        t_bool;
+typedef char		t_bool;
 
 typedef struct		s_tree
 {
@@ -59,7 +59,7 @@ t_bool				ft_isdigit(int c);
 t_bool				ft_isalnum(int c);
 t_bool				ft_isascii(int c);
 t_bool				ft_isprint(int c);
-t_bool              ft_isspace(int c);
+t_bool				ft_isspace(int c);
 
 void				*ft_calloc(size_t nmemb, size_t size);
 char				*ft_strdup(const char *s);

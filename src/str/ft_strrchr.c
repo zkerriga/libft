@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*found;
+	const char	*found;
 
 	found = NULL;
 	while (*s)
@@ -22,5 +22,5 @@ char	*ft_strrchr(const char *s, int c)
 		if (*s == c)
 			found = s;
 	}
-	return (found);
+	return ((char *)found);
 }

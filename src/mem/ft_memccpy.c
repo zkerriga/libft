@@ -14,8 +14,8 @@
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	register unsigned char *dest_copy;
-	register const unsigned char *src_copy;
+	register unsigned char			*dest_copy;
+	register const unsigned char	*src_copy;
 
 	dest_copy = dest;
 	src_copy = src;
