@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zkerriga <zkerriga@student.21-school.ru>   +#+  +:+       +#+        */
+/*   By: zkerriga <zkerriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/30 12:01:01 by zkerriga          #+#    #+#             */
-/*   Updated: 2020/05/12 10:11:42 by zkerriga         ###   ########.fr       */
+/*   Updated: 2020/06/18 19:30:08 by zkerriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void				ft_treepostorder(t_tree *tree, void (*func)(void*));
 void				ft_treepreorder(t_tree *tree, void (*func)(void*));
 
 void				memory_manager(void *ptr, t_bool action);
-void				mega_free(void *ptr);
-void				*mega_malloc(size_t sizemem);
+void				free_gc(void *ptr);
+void				*malloc_gc(size_t sizemem);
 
 #endif
