@@ -17,6 +17,11 @@ static int		pointer_compare(void *ptr1, void *ptr2)
 	return ((ptr1 == ptr2) ? 0 : 1);
 }
 
+static			pointer_free(void *ptr)
+{
+	free(ptr);
+}
+
 /*
 ** This function collects all pointers to the allocated memory
 ** and clears them if necessary.
@@ -32,7 +37,7 @@ void			memory_manager(void *ptr, t_bool action)
 	static t_list	*collector = NULL;
 
 	if (ptr == NULL)
-		ft_lstclear(&collector, &free);
+		ft_lstclear(&collector, &pointer_free);
 	else if (action == M_ADD)
 		ft_lstadd_front(&collector, ft_lstnew(ptr));
 	else if (action == M_REMOVE)
