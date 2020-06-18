@@ -6,7 +6,7 @@
 /*   By: zkerriga <zkerriga@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/18 14:52:21 by zkerriga          #+#    #+#             */
-/*   Updated: 2020/06/18 15:03:45 by zkerriga         ###   ########.fr       */
+/*   Updated: 2020/06/18 19:27:54 by zkerriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int		pointer_compare(void *ptr1, void *ptr2)
 	return ((ptr1 == ptr2) ? 0 : 1);
 }
 
-static			pointer_free(void *ptr)
+static void		pointer_free(void *ptr)
 {
 	free(ptr);
 }
