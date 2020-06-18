@@ -17,6 +17,8 @@
 # include <unistd.h>
 
 # define FT_MAX_LONG 9223372036854775807
+# define M_ADD 1
+# define M_REMOVE 0
 
 typedef char		t_bool;
 
@@ -86,6 +88,8 @@ void				ft_lstclear(t_list **lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 								void (*del)(void *));
+void				ft_lstdelel(t_list **lst, void *content,
+								int (*cmp)(void *, void *));
 
 void				ft_leafadd(t_tree **tree, t_tree *new,
 								int (*f_cmp)(void *, void *));
@@ -96,5 +100,9 @@ void				ft_treeclear(t_tree **tree, void (*del)(void*));
 void				ft_treeinorder(t_tree *tree, void (*func)(void*));
 void				ft_treepostorder(t_tree *tree, void (*func)(void*));
 void				ft_treepreorder(t_tree *tree, void (*func)(void*));
+
+void				memory_manager(void *ptr, t_bool action);
+void				mega_free(void *ptr);
+void				*mega_malloc(size_t sizemem);
 
 #endif
