@@ -26,7 +26,7 @@ MEM_DIR = mem/
 MEM_FILES = $(addprefix $(MEM_DIR)ft_, memccpy memchr memcmp memcpy memmove memset bzero calloc)
 
 NBR_DIR = nbr/
-NBR_FILES = $(addprefix $(NBR_DIR)ft_, atoi itoa)
+NBR_FILES = $(addprefix $(NBR_DIR)ft_, atoi itoa atof)
 
 PUT_DIR = put/
 PUT_FILES = $(addprefix $(PUT_DIR)ft_, putchar_fd putendl_fd putnbr_fd putstr_fd)
