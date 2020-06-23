@@ -25,6 +25,9 @@ IS_FILES = $(addprefix $(IS_DIR)ft_, isalnum isalpha isascii isdigit isprint tol
 MEM_DIR = mem/
 MEM_FILES = $(addprefix $(MEM_DIR)ft_, memccpy memchr memcmp memcpy memmove memset bzero calloc)
 
+MAL_DIR = malloc_gc/
+MAL_FILES = $(addprefix $(MAL_DIR), free_gc malloc_gc memory_manager)
+
 NBR_DIR = nbr/
 NBR_FILES = $(addprefix $(NBR_DIR)ft_, atoi itoa atof)
 
@@ -40,7 +43,7 @@ LST_FILES = $(addprefix $(LST_DIR)ft_, lstadd_back lstadd_front lstclear lstdelo
 TRE_DIR = tree/
 TRE_FILES = $(addprefix $(TRE_DIR)ft_, leafadd leaffind leafnew treeclear treeinorder treepostorder treepreorder)
 
-FILES = $(IS_FILES) $(MEM_FILES) $(NBR_FILES) $(PUT_FILES) $(STR_FILES) $(LST_FILES) $(TRE_FILES)
+FILES = $(IS_FILES) $(MEM_FILES) $(MAL_FILES) $(NBR_FILES) $(PUT_FILES) $(STR_FILES) $(LST_FILES) $(TRE_FILES)
 FILES.O = $(addprefix $(OBJ_DIR), $(FILES:=.o))
 
 .PHONY: all
@@ -52,7 +55,7 @@ $(NAME): $(FILES.O)
 
 $(OBJ_DIR):
 	mkdir $(OBJ_DIR)
-	mkdir $(addprefix $(OBJ_DIR), $(IS_DIR) $(MEM_DIR) $(NBR_DIR) $(PUT_DIR) $(STR_DIR) $(LST_DIR) $(TRE_DIR))
+	mkdir $(addprefix $(OBJ_DIR), $(IS_DIR) $(MEM_DIR) $(MAL_DIR) $(NBR_DIR) $(PUT_DIR) $(STR_DIR) $(LST_DIR) $(TRE_DIR))
 
 $(FILES.O): $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(HEAD)
 	$(CC) $(FLAGS) -c $< -o $@
