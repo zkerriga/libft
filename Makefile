@@ -38,7 +38,7 @@ STR_DIR = str/
 STR_FILES = $(addprefix $(STR_DIR)ft_, strchr strlcat strlcpy strlen strnstr strrchr strncmp strjoin strmapi strtrim substr split strdup)
 
 LST_DIR = lst/
-LST_FILES = $(addprefix $(LST_DIR)ft_, lstadd_back lstadd_front lstclear lstdelone lstiter lstlast lstmap lstnew lstsize)
+LST_FILES = $(addprefix $(LST_DIR)ft_, lstadd_back lstadd_front lstclear lstdelone lstdelel lstiter lstlast lstmap lstnew lstsize)
 
 TRE_DIR = tree/
 TRE_FILES = $(addprefix $(TRE_DIR)ft_, leafadd leaffind leafnew treeclear treeinorder treepostorder treepreorder)
