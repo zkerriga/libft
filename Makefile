@@ -20,7 +20,7 @@ CC = gcc
 FLAGS = -I$(HDR_DIR) -Wall -Wextra -Werror 
 
 IS_DIR = is/
-IS_FILES = $(addprefix $(IS_DIR)ft_, isalnum isalpha isascii isdigit isprint tolower toupper)
+IS_FILES = $(addprefix $(IS_DIR)ft_, isalnum isalpha isascii isdigit isspace isprint tolower toupper)
 
 MEM_DIR = mem/
 MEM_FILES = $(addprefix $(MEM_DIR)ft_, memccpy memchr memcmp memcpy memmove memset bzero calloc)
