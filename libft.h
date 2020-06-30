@@ -92,7 +92,7 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 void				ft_lstdelel(t_list **lst, void *content,
 								int (*cmp)(void *, void *));
 
-void				ft_leafadd(t_tree **tree, t_tree *new,
+void				ft_leafadd(t_tree **tree, t_tree *fresh,
 								int (*f_cmp)(void *, void *));
 t_tree				*ft_leaffind(t_tree *tree, void *content,
 									int (*f_cmp)(void *, void *));

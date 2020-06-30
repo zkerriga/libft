@@ -12,15 +12,15 @@
 
 #include "libft.h"
 
-void	ft_leafadd(t_tree **tree, t_tree *new, int (*f_cmp)(void *, void *))
+void	ft_leafadd(t_tree **tree, t_tree *fresh, int (*f_cmp)(void *, void *))
 {
 	if (*tree)
 	{
-		if (f_cmp((*tree)->content, new->content) < 0)
-			ft_leafadd(&(*tree)->left, new, f_cmp);
+		if (f_cmp((*tree)->content, fresh->content) < 0)
+			ft_leafadd(&(*tree)->left, fresh, f_cmp);
 		else
-			ft_leafadd(&(*tree)->right, new, f_cmp);
+			ft_leafadd(&(*tree)->right, fresh, f_cmp);
 	}
 	else
-		*tree = new;
+		*tree = fresh;
 }
