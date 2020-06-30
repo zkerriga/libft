@@ -15,19 +15,19 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	register unsigned int	i;
-	char					*new;
+	char					*fresh;
 
 	if (!s)
 		return (NULL);
-	if ((new = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
+	if ((fresh = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
 	{
 		i = 0;
 		while (*s)
 		{
-			new[i] = f(i, *s++);
+			fresh[i] = f(i, *s++);
 			++i;
 		}
-		new[i] = '\0';
+		fresh[i] = '\0';
 	}
-	return (new);
+	return (fresh);
 }

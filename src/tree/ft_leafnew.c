@@ -14,14 +14,14 @@
 
 t_tree	*ft_leafnew(void *content)
 {
-	t_tree	*new;
+	t_tree	*leaf;
 
-	new = (t_tree *)malloc(sizeof(t_tree));
-	if (new)
+	leaf = (t_tree *)malloc(sizeof(t_tree));
+	if (leaf)
 	{
-		new->content = content;
-		new->left = NULL;
-		new->right = NULL;
+		leaf->content = content;
+		leaf->left = NULL;
+		leaf->right = NULL;
 	}
-	return (new);
+	return (leaf);
 }
