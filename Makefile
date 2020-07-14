@@ -40,10 +40,14 @@ STR_FILES = $(addprefix $(STR_DIR)ft_, strchr strlcat strlcpy strlen strnstr str
 LST_DIR = lst/
 LST_FILES = $(addprefix $(LST_DIR)ft_, lstadd_back lstadd_front lstclear lstdelone lstdelel lstiter lstlast lstmap lstnew lstsize)
 
+DLS_DIR = dlst/
+DLS_FILES = $(addprefix $(DLS_DIR)ft_, dlstadd_front dlstclear dlstnew)
+
 TRE_DIR = tree/
 TRE_FILES = $(addprefix $(TRE_DIR)ft_, leafadd leaffind leafnew treeclear treeinorder treepostorder treepreorder)
 
-FILES = $(IS_FILES) $(MEM_FILES) $(MAL_FILES) $(NBR_FILES) $(PUT_FILES) $(STR_FILES) $(LST_FILES) $(TRE_FILES)
+FILES = $(IS_FILES) $(MEM_FILES) $(MAL_FILES) $(NBR_FILES) $(PUT_FILES) $(STR_FILES) $(LST_FILES) \
+		$(TRE_FILES) $(DLS_FILES)
 FILES.O = $(addprefix $(OBJ_DIR), $(FILES:=.o))
 
 .PHONY: all
@@ -55,7 +59,8 @@ $(NAME): $(FILES.O)
 
 $(OBJ_DIR):
 	mkdir $(OBJ_DIR)
-	mkdir $(addprefix $(OBJ_DIR), $(IS_DIR) $(MEM_DIR) $(MAL_DIR) $(NBR_DIR) $(PUT_DIR) $(STR_DIR) $(LST_DIR) $(TRE_DIR))
+	mkdir $(addprefix	$(OBJ_DIR), $(IS_DIR) $(MEM_DIR) $(MAL_DIR) $(NBR_DIR) $(PUT_DIR) $(STR_DIR) \
+						$(LST_DIR) $(TRE_DIR) $(DLS_DIR))
 
 $(FILES.O): $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(HEAD)
 	$(CC) $(FLAGS) -c $< -o $@
