@@ -19,6 +19,8 @@
 # define FT_MAX_LONG 9223372036854775807
 # define M_ADD 1
 # define M_REMOVE 0
+# define TRUE 1
+# define FALSE 0
 
 typedef char		t_bool;
 
