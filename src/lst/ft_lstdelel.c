@@ -12,7 +12,14 @@
 
 #include "libft.h"
 
-void	ft_lstdelel(t_list **lst, void *content, int (*cmp)(void *, void *))
+static void	delete(t_list *lst, void (*del)(void *))
+{
+	del(lst->content);
+	free(lst);
+}
+
+void		ft_lstdelel(t_list **lst, void *content, int (*cmp)(void *, void *),
+						void (*del)(void *))
 {
 	t_list	*tmp;
 	t_list	*pre;
@@ -20,7 +27,7 @@ void	ft_lstdelel(t_list **lst, void *content, int (*cmp)(void *, void *))
 	if (cmp((*lst)->content, content) == 0)
 	{
 		tmp = (*lst)->next;
-		free(*lst);
+		delete(*lst, del);
 		*lst = tmp;
 		return ;
 	}
@@ -31,7 +38,7 @@ void	ft_lstdelel(t_list **lst, void *content, int (*cmp)(void *, void *))
 		if (cmp(tmp->content, content) == 0)
 		{
 			pre->next = tmp->next;
-			free(tmp);
+			delete(tmp, del);
 			return ;
 		}
 		pre = pre->next;

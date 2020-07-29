@@ -99,7 +99,7 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 								void (*del)(void *));
 void				ft_lstdelel(t_list **lst, void *content,
-								int (*cmp)(void *, void *));
+							int (*cmp)(void *, void *), void (*del)(void *));
 
 void				ft_leafadd(t_tree **tree, t_tree *fresh,
 								int (*f_cmp)(void *, void *));

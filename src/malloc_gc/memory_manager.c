@@ -41,5 +41,5 @@ void			memory_manager(void *ptr, t_bool action)
 	else if (action == M_ADD)
 		ft_lstadd_front(&collector, ft_lstnew(ptr));
 	else if (action == M_REMOVE)
-		ft_lstdelel(&collector, ptr, &pointer_compare);
+		ft_lstdelel(&collector, ptr, pointer_compare, pointer_free);
 }
