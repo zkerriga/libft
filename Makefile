@@ -50,20 +50,28 @@ FILES = $(IS_FILES) $(MEM_FILES) $(MAL_FILES) $(NBR_FILES) $(PUT_FILES) $(STR_FI
 		$(TRE_FILES) $(DLS_FILES)
 FILES.O = $(addprefix $(OBJ_DIR), $(FILES:=.o))
 
+GNL_HDR = get_new_line.h
+GNL_DIR = get_new_line/
+GNL_FILES = $(addprefix $(GNL_DIR), get_new_line)
+GNL_FILES.O = $(addprefix $(OBJ_DIR), $(GNL_FILES:=.o))
+
 .PHONY: all
 all: $(OBJ_DIR) $(NAME)
 	@echo -e "\n\033[32m[+] Make completed!\033[0m"
 
-$(NAME): $(FILES.O)
+$(NAME): $(FILES.O) $(GNL_FILES.O)
 	ar rcs $(NAME) $?
 
 $(OBJ_DIR):
 	mkdir $(OBJ_DIR)
 	mkdir $(addprefix	$(OBJ_DIR), $(IS_DIR) $(MEM_DIR) $(MAL_DIR) $(NBR_DIR) $(PUT_DIR) $(STR_DIR) \
-						$(LST_DIR) $(TRE_DIR) $(DLS_DIR))
+						$(LST_DIR) $(TRE_DIR) $(DLS_DIR) $(GNL_DIR))
 
 $(FILES.O): $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(HEAD)
 	$(CC) $(FLAGS) -c $< -o $@
+
+$(GNL_FILES.O): $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(HEAD) $(GNL_HDR)
+	$(CC) $(FLAGS) -D BUFFER_SIZE=$(gnl_buff_size) -c $< -o $@
 
 .PHONY: clean
 clean:
@@ -76,7 +84,7 @@ fclean: clean
 .PHONY: re
 re: fclean all
 
-.PHONY: so
-so: fclean
-	gcc -fPIC -c *.c
-	gcc -shared -Wl,-soname,libft.so -o libft.so *.o
+#.PHONY: so
+#so: fclean
+#	gcc -fPIC -c *.c
+#	gcc -shared -Wl,-soname,libft.so -o libft.so *.o
