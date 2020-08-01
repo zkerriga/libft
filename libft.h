@@ -114,6 +114,7 @@ void				ft_treepreorder(t_tree *tree, void (*func)(void*));
 void				memory_manager(void *ptr, t_bool action);
 void				free_gc(void *ptr);
 void				*malloc_gc(size_t sizemem);
+void				*calloc_gc(size_t nmemb, size_t size);
 
 t_dlist				*ft_dlstnew(void *content);
 void				ft_dlstadd_front(t_dlist **lst, t_dlist *fresh);

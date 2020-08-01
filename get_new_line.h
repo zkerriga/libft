@@ -15,6 +15,10 @@
 
 # include "libft.h"
 
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 1
+#endif
+
 typedef enum	e_gnl
 {
 	ERR_FD = -3,

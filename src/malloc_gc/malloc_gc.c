@@ -20,3 +20,12 @@ void	*malloc_gc(size_t sizemem)
 	memory_manager(pointer, M_ADD);
 	return (pointer);
 }
+
+void	*calloc_gc(size_t nmemb, size_t size)
+{
+	void	*pointer;
+
+	pointer = ft_calloc(nmemb, size);
+	memory_manager(pointer, M_ADD);
+	return (pointer);
+}
