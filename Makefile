@@ -70,6 +70,10 @@ $(OBJ_DIR):
 $(FILES.O): $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(HEAD)
 	$(CC) $(FLAGS) -c $< -o $@
 
+ifeq ($(gnl_buff_size),)
+gnl_buff_size := 1
+endif
+
 $(GNL_FILES.O): $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(HEAD) $(GNL_HDR)
 	$(CC) $(FLAGS) -D BUFFER_SIZE=$(gnl_buff_size) -c $< -o $@
 
